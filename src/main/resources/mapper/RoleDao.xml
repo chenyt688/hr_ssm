@@ -40,9 +40,15 @@
 
 
     <!--逻辑删除角色-->
-    <update id="deleteRoleByRoleCode">
-        update hr_roles set del_flag = '1'
-        where role_code = #{role_code}
-    </update>
+    <delete id="deleteRoleByRoleCode">
+        delete from hr_roles where role_code = #{role_code}
+    </delete>
+
+
+    <!--插入角色数据-->
+    <insert id="inserRole">
+        insert into hr_roles(role_code, role_name, del_flag)
+        values (#{role_code},#{role_name},#{del_flag})
+    </insert>
 
 </mapper>

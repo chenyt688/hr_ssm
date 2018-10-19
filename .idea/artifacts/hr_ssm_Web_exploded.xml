@@ -37,6 +37,17 @@
           <element id="library" level="project" name="Maven: org.thymeleaf:thymeleaf:3.0.9.RELEASE" />
           <element id="library" level="project" name="Maven: org.unbescape:unbescape:1.1.5.RELEASE" />
           <element id="library" level="project" name="Maven: taglibs:standard:1.1.2" />
+          <element id="library" level="project" name="Maven: com.github.jsqlparser:jsqlparser:1.0" />
+          <element id="library" level="project" name="Maven: com.github.pagehelper:pagehelper:5.1.2" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-analyzers-common:5.3.1" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-analyzers-smartcn:5.3.1" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-core:5.3.1" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-highlighter:5.3.1" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-join:5.3.1" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-memory:5.3.1" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-queries:5.3.1" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-queryparser:5.3.1" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-sandbox:5.3.1" />
         </element>
       </element>
     </root>

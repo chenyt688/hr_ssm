@@ -26,4 +26,12 @@ public class RoleService {
     public void deleteRoleByRoleCode(String role_code){
         roleDao.deleteRoleByRoleCode(role_code);
     }
+
+    public void insertRole(Role role) {
+        roleDao.inserRole(role);
+    }
+
+    public void updateRole(Role role) {
+        roleDao.updateRole(role);
+    }
 }

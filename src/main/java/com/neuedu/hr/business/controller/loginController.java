@@ -33,6 +33,7 @@ public class loginController {
         List<Role> allRole = roleService.getAllRole();
         HttpSession session  =request.getSession(true);
         session.setAttribute("roleListInfo",allRole);
+
         //model.addAttribute("roleListInfo", allRole);
         return "login";
     }
@@ -40,11 +41,13 @@ public class loginController {
     public String logintoIndex(User user, HttpServletRequest request, HttpServletResponse response,Model model) throws IOException {
 
         String role_code = request.getParameter("type"); //获取登录类型
-        //System.out.println(role_code);
+        //String[] split = request.getRequestURI().split("/");
+        //System.out.println("------------------->"+request.getRequestURI() + split.length);
         //判断用户是否存在
         System.out.println(user.toString());
         List<User> userByCondition = userService.getUserByCondition(user.getUser_name(),user.getPassword(),role_code);
         HttpSession session = request.getSession(true);
+
         if (userByCondition.size() != 0){  //登录的用户账号密码存在
             model.addAttribute("firstMenu",userByCondition.get(0).getRoleList().get(0).getMenuList().get(0));
             session.setAttribute("principal", userByCondition);

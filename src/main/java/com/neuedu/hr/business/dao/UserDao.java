@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
-
+@Repository
 public interface UserDao {
     List<User> getAllUser();
 

@@ -27,20 +27,26 @@ public class UserController {
     private UserAndRoleService userAndRoleService;
     @RequestMapping("/insertUser")
     public String insertUser(User user, HttpServletRequest request,String judgelable){
-        System.out.println("judgelable"   +  "         "  +judgelable);
-        if(judgelable.equals("insert")){
-            String roles[] = request.getParameterValues("rolevalue");
-            //System.out.println(roles.length+ "    " + user.toString());
-            userService.insertUser(user);
-            for (int i=0; i<roles.length;i++){
-                UserAndRole userAndRole = new UserAndRole();
-                userAndRole.setUser_code(user.getUser_code());
-                userAndRole.setRole_code(roles[i]);
-                userAndRoleService.insertUserandRole(userAndRole);
-            }
-            return "redirect:/user/queryUser";
+        //System.out.println("judgelable"   +  "         "  +judgelable);
+        String roles[] = request.getParameterValues("rolevalue");
+        //System.out.println(roles.length+ "    " + user.toString());
+        user.setDel_flag('0');
+
+        userAndRoleService.deleteUserandRole(user.getUser_code());
+        for (int i = 0; i < roles.length; i++) {
+            UserAndRole userAndRole = new UserAndRole();
+            userAndRole.setUser_code(user.getUser_code());
+            userAndRole.setRole_code(roles[i]);
+            userAndRoleService.insertUserandRole(userAndRole);
         }
-        return "redirect:/user/updateUser";
+
+        if (judgelable.equals("insert")) {
+            userService.insertUser(user);
+        } else {
+            userService.updateUser(user);
+        }
+        return "redirect:/user/queryUser";
+
     }
 
     @RequestMapping("/queryUser")
@@ -64,10 +70,10 @@ public class UserController {
 
     @RequestMapping("/deleteUser")
     public String deleteUser(String lable){   //lable为员工编号
+        userAndRoleService.deleteUserandRole(lable);
         userService.deleteUser(lable);
         return "redirect:/user/queryUser";
     }
-
     @RequestMapping("/updateUser")
     public String updateUser(User user){
         userService.updateUser(user);

@@ -8,9 +8,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserAndRoleService {
     @Autowired
-    private UserAndRoleDao userAndMenuDao;
+    private UserAndRoleDao userAndRoleDao;
     public void insertUserandRole(UserAndRole userAndRole){
-        userAndMenuDao.insertUserandRole(userAndRole);
+        userAndRoleDao.insertUserandRole(userAndRole);
     }
 
+    public void deleteUserandRole(String user_code) {
+        userAndRoleDao.delete(user_code);
+    }
 }

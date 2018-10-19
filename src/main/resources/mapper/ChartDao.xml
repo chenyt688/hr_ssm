@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neuedu.hr.business.dao.ChartDao">
+    <resultMap id="departmentChart" type="com.neuedu.hr.business.entity.ChartBean">
+        <result property="name" column="depart_name"></result>
+        <result property="count" column="COUNT(*)"></result>
+    </resultMap>
+
+    <select id="departmentChart" resultMap="departmentChart">
+        select depart_name,COUNT(*) FROM hr_talents t
+        LEFT JOIN hr_departments d ON d.depart_name=t.talent_dep
+        WHERE t.talent_status='1' group by d.depart_code
+    </select>
+
+    <resultMap id="ratioChart" type="com.neuedu.hr.business.entity.ChartBean">
+        <result property="name" column="talent_sexual"></result>
+        <result property="count" column="COUNT(*)"></result>
+    </resultMap>
+
+    <select id="ratioChart" resultMap="ratioChart">
+        select talent_sexual,COUNT(*) FROM hr_talents t
+        group by talent_sexual
+    </select>
+</mapper>
+
+

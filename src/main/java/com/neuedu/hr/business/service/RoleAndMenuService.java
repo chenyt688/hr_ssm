@@ -17,4 +17,8 @@ public class RoleAndMenuService {
     public void insertRoleAndMenu(RoleAndMenu roleAndMenu){
         roleAndMenuDao.insertRoleAndMenu(roleAndMenu);
     }
+
+    public void deleteRoleAndMenu(String role_code) {
+        roleAndMenuDao.deleteRoleAndMenu(role_code);
+    }
 }

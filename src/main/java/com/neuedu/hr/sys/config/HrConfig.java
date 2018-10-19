@@ -50,10 +50,14 @@ public class HrConfig  extends WebMvcConfigurerAdapter {
     public DataSource dataSource(){
         //创建druid连接池
         DruidDataSource druidDataSource = new DruidDataSource();
-        druidDataSource.setDriverClassName(environment.getProperty("jdbc.driver"));
+        /*druidDataSource.setDriverClassName(environment.getProperty("jdbc.driver"));
         druidDataSource.setUrl(environment.getProperty("jdbc.url"));
         druidDataSource.setPassword(environment.getProperty("jdbc.password"));
-        druidDataSource.setUsername(environment.getProperty("jdbc.username"));
+        druidDataSource.setUsername(environment.getProperty("jdbc.username"));*/
+        druidDataSource.setDriverClassName("com.mysql.jdbc.Driver");
+        druidDataSource.setUrl("jdbc:mysql://localhost:3306/hr_ssm?useUnicode=true&characterEncoding=UTF-8");
+        druidDataSource.setPassword("");
+        druidDataSource.setUsername("root");
         return druidDataSource;
     }
 
@@ -108,8 +112,8 @@ public class HrConfig  extends WebMvcConfigurerAdapter {
      * 配置拦截器
      * @param registry
      */
-    /*@Override
+    @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new AuthIntrceptor()).addPathPatterns("/**").excludePathPatterns("/login/**","/","login.html");
-    }*/
+    }
 }

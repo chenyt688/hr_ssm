@@ -2,10 +2,10 @@ package com.neuedu.hr.business.entity;
 
 public class RoleAndMenu {
     private String  role_code;
-    private int menu_code;
+    private String menu_code;
     private char power; //用户权限状态 1表示拥有权限，反之用0表示
 
-    public RoleAndMenu(String role_code, int menu_code, char power) {
+    public RoleAndMenu(String role_code, String menu_code, char power) {
         this.role_code = role_code;
         this.menu_code = menu_code;
         this.power = power;
@@ -22,11 +22,11 @@ public class RoleAndMenu {
         this.role_code = role_code;
     }
 
-    public int getMenu_code() {
+    public String getMenu_code() {
         return menu_code;
     }
 
-    public void setMenu_code(int menu_code) {
+    public void setMenu_code(String menu_code) {
         this.menu_code = menu_code;
     }
 
@@ -36,5 +36,14 @@ public class RoleAndMenu {
 
     public void setPower(char power) {
         this.power = power;
+    }
+
+    @Override
+    public String toString() {
+        return "RoleAndMenu{" +
+                "role_code='" + role_code + '\'' +
+                ", menu_code='" + menu_code + '\'' +
+                ", power=" + power +
+                '}';
     }
 }

@@ -23,6 +23,7 @@
     function update(obj) {/*点击修改按钮，给模态框加载信息并且弹出模态框*/
         myModalLabel1.style.display = 'none';
         myModalLabel2.style.display = 'block';
+        $("#judgelable").val("update");
         $('#myModal').modal({
             show: true
         })
@@ -31,7 +32,7 @@
     function changeTitle() {
         myModalLabel1.style.display = 'block';
         myModalLabel2.style.display = 'none';
-        $("#judgeway").val("insert");
+        $("#judgelable").val("insert");
         $('#myModal').modal({
             show: true
         })
@@ -95,14 +96,14 @@
 
                                     <label class="col-sm-2 control-label">角色标识:</label>
                                     <div class="col-sm-4 ">
-                                        <input type="text" name="inputrolecode" class="form-control"
+                                        <input type="text" name="role_code" class="form-control"
                                                placeholder="请输入角色标识符"
                                                id="r_code">
                                     </div>
 
                                     <label class="col-sm-2 control-label">角色名称:</label>
                                     <div class="col-sm-4 ">
-                                        <input type="text" name="inputrolename" class="form-control"
+                                        <input type="text" name="role_name" class="form-control"
                                                placeholder="请输入角色名称" id="roles_name">
                                     </div>
                                 </div>
@@ -120,7 +121,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                                <input type="hidden" name="judgelable" value="addRole">
+                                <input type="hidden" id="judgelable" value="insert" name="judgelable">
                                 <button type="submit" class="btn btn-primary">提交</button>
                             </div>
                         </div><!-- /.modal-content -->

@@ -1096,125 +1096,134 @@
     </column>
     <column id="271" parent="238" name="talent_status">
       <Position>4</Position>
-      <DataType>char(1)|0s</DataType>
+      <DataType>varchar(10)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="272" parent="238" name="talent_sexual">
       <Position>5</Position>
-      <DataType>char(1)|0s</DataType>
+      <DataType>varchar(10)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="273" parent="238" name="talent_identity">
       <Position>6</Position>
-      <DataType>char(18)|0s</DataType>
+      <DataType>varchar(18)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="274" parent="238" name="cratetime">
+    <column id="274" parent="238" name="del_flag">
       <Position>7</Position>
-      <DataType>date|0s</DataType>
+      <DataType>varchar(10)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="275" parent="238" name="del_flag">
+    <column id="275" parent="238" name="talent_dep">
       <Position>8</Position>
-      <DataType>char(1)|0s</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
+      <Collation>utf8mb4_general_ci</Collation>
     </column>
-    <key id="276" parent="238" name="PRIMARY">
+    <column id="276" parent="238" name="talent_pos">
+      <Position>9</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+      <Collation>utf8mb4_general_ci</Collation>
+    </column>
+    <key id="277" parent="238" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>talent_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="277" parent="239" name="id">
+    <column id="278" parent="239" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="278" parent="239" name="in_depart_id">
-      <Position>2</Position>
-      <DataType>int(11)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="279" parent="239" name="in_pos_id">
-      <Position>3</Position>
-      <DataType>int(11)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="280" parent="239" name="talent_id">
-      <Position>4</Position>
-      <DataType>int(11)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="281" parent="239" name="tran_date">
-      <Position>5</Position>
-      <DataType>date|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="282" parent="239" name="del_flag">
-      <Position>6</Position>
-      <DataType>char(1)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <key id="283" parent="239" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="284" parent="240" name="user_id">
-      <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="285" parent="240" name="user_code">
+    <column id="279" parent="239" name="in_depart_name">
       <Position>2</Position>
       <DataType>varchar(64)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
+      <Collation>utf8mb4_general_ci</Collation>
     </column>
-    <column id="286" parent="240" name="user_name">
+    <column id="280" parent="239" name="in_pos_name">
       <Position>3</Position>
       <DataType>varchar(64)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
       <Collation>utf8mb4_general_ci</Collation>
     </column>
-    <column id="287" parent="240" name="password">
+    <column id="281" parent="239" name="talent_code">
       <Position>4</Position>
       <DataType>varchar(64)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="288" parent="240" name="user_sexual">
+    <column id="282" parent="239" name="tran_date">
       <Position>5</Position>
-      <DataType>char(1)|0s</DataType>
+      <DataType>varchar(32)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="289" parent="240" name="user_phone">
+    <column id="283" parent="239" name="del_flag">
       <Position>6</Position>
-      <DataType>varchar(11)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="290" parent="240" name="del_flag">
-      <Position>7</Position>
       <DataType>char(1)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="291" parent="240" name="PRIMARY">
+    <key id="284" parent="239" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>user_id</ColNames>
+      <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="292" parent="241" name="user_code">
+    <column id="285" parent="240" name="user_id">
       <Position>1</Position>
-      <DataType>varchar(64)|0s</DataType>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="293" parent="241" name="role_code">
+    <column id="286" parent="240" name="user_code">
       <Position>2</Position>
       <DataType>varchar(64)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="294" parent="241" name="own">
+    <column id="287" parent="240" name="user_name">
+      <Position>3</Position>
+      <DataType>varchar(64)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+      <Collation>utf8mb4_general_ci</Collation>
+    </column>
+    <column id="288" parent="240" name="password">
+      <Position>4</Position>
+      <DataType>varchar(64)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="289" parent="240" name="user_sexual">
+      <Position>5</Position>
+      <DataType>char(1)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="290" parent="240" name="user_phone">
+      <Position>6</Position>
+      <DataType>varchar(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="291" parent="240" name="del_flag">
+      <Position>7</Position>
+      <DataType>char(1)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="292" parent="240" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>user_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="293" parent="241" name="user_code">
+      <Position>1</Position>
+      <DataType>varchar(64)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="294" parent="241" name="role_code">
+      <Position>2</Position>
+      <DataType>varchar(64)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="295" parent="241" name="own">
       <Position>3</Position>
       <DataType>char(1)|0s</DataType>
       <ColumnKind>normal</ColumnKind>

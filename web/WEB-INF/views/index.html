@@ -17,7 +17,16 @@
     <!-- ICONS -->
     <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
     <link rel="icon" type="image/png" sizes="96x96" href="../assets/img/favicon.png">
+
 </head>
+
+<style>
+    .modal-dialog {
+        width: 600px;
+        margin: 100px auto;
+    }
+</style>
+
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
 <body>
@@ -32,7 +41,7 @@
                 <button type="button" class="btn-toggle-fullwidth"><i class="lnr lnr-arrow-left-circle"></i></button>
 
                 <img src="../assets/img/user.png" class="img-circle " alt="Avatar" >
-                <span>欢迎您</span>
+                <span><span th:text="${session.principal.get(0).getUser_name()}">,</span>欢迎您</span>
                 <a class="btn btn-success update-pro"th:href="@{/}" ><i class="fa fa-rocket"></i> <span>退出系统</span></a>
             </div>
         </div>

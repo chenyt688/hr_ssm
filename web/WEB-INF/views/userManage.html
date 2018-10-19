@@ -23,7 +23,7 @@
         function update(obj) {/*点击修改按钮，给模态框加载信息并且弹出模态框*/
             myModalLabel1.style.display = 'none';
             myModalLabel2.style.display = 'block';
-            $("#judgeway").val("update");
+            $("#judgelable").val("update");
             var tds = $(obj).parent().parent().find('td');
             $("#user_code").val(tds.eq(0).text());
             $("#user_name").val(tds.eq(1).text());
@@ -40,7 +40,7 @@
         function changeTitle() {
             myModalLabel1.style.display = 'block';
             myModalLabel2.style.display = 'none';
-            $("#judgeway").val("insert");
+            $("#judgelable").val("insert");
             $('#myModal').modal({
                 show : true
             })
@@ -90,82 +90,83 @@
                     </tr>
                 </table>
             </form>
-
-
-
-            <!-- 模态框（Modal） -->
-            <form th:action="@{/user/insertUser}" method="post" id="form2">
-                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                <h4 class="modal-title" id="myModalLabel1">用户信息添加</h4>
-                                <h4 class="modal-title" id="myModalLabel2" style="display: none">用户信息修改</h4>
-                            </div>
-                            <div class="modal-body">
-                                <div class="row">
-                                    <label class="col-sm-2 control-label">用户编号:</label>
-                                    <div class="col-sm-4">
-                                        <input type="text"  class="form-control"  name="user_code" id="user_code">
-                                    </div>
-                                    <label class="col-sm-2 control-label">用户名:</label>
-                                    <div class="col-sm-4">
-                                        <input type="text"  class="form-control"  name="user_name" id="user_name">
-                                    </div>
-                                </div>
-                                <br>
-
-                                <div class="row">
-                                    <label class="col-sm-2 control-label">密码:</label>
-                                    <div class="col-sm-4 ">
-                                        <input type="text"  class="form-control" placeholder="" name="password" value="111" id="password">
-                                    </div>
-                                    <label class="col-sm-2 control-label">性别:</label>
-                                    <div class="col-sm-4 ">
-                                        <select name="user_sexual" class="form-control" id="user_sexual">
-                                            <option value="0">男</option>
-                                            <option value="1">女</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <br>
-
-                                <div class="row">
-                                    <label class="col-sm-2 control-label">电话:</label>
-                                    <div class="col-sm-4 ">
-                                        <input type="text"  class="form-control" placeholder="" name="user_phone"  id="user_phone">
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <label class="col-sm-2 control-label">角色</label>
-                                    <div class="col-sm- 4">
-                                        <input type="checkbox" id="rolevalue" th:name="rolevalue" th:each="r:${session.roleListInfo}" th:value="${r.role_code}" th:text="${r.role_name}">
-                                        &nbsp;&nbsp;&nbsp;&nbsp;
-                                        <!--<select  name="role_code" class="form-control">
-                                            <option selected disabled>请选择用户类型</option>
-                                            <option th:each="r:${session.roleListInfo}" th:value="${r.role_code}" th:text="${r.role_name}"></option>
-                                        </select>-->
-                                    </div>
-                                </div>
-                                <br>
-
-                                <br>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                                <input type="hidden" name="judgelable" value="insert">
-                                <button type="submit" class="btn btn-primary" >提交</button>
-                            </div>
-                        </div><!-- /.modal-content -->
-                    </div><!-- /.modal -->
-                </div>
-            </form>
         </div>
     </div>
 
+    <!-- 模态框（Modal） -->
+    <form th:action="@{/user/insertUser}" method="post" id="form2">
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel1">用户信息添加</h4>
+                        <h4 class="modal-title" id="myModalLabel2" style="display: none">用户信息修改</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <label class="col-sm-2 control-label">用户编号:</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" name="user_code" id="user_code">
+                            </div>
+                            <label class="col-sm-2 control-label">用户名:</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" name="user_name" id="user_name">
+                            </div>
+                        </div>
+                        <br>
 
+                        <div class="row">
+                            <label class="col-sm-2 control-label">密码:</label>
+                            <div class="col-sm-4 ">
+                                <input type="text" class="form-control" placeholder="" name="password" value="111"
+                                       id="password">
+                            </div>
+                            <label class="col-sm-2 control-label">性别:</label>
+                            <div class="col-sm-4 ">
+                                <select name="user_sexual" class="form-control" id="user_sexual">
+                                    <option value="0">男</option>
+                                    <option value="1">女</option>
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+
+                        <div class="row">
+                            <label class="col-sm-2 control-label">电话:</label>
+                            <div class="col-sm-4 ">
+                                <input type="text" class="form-control" placeholder="" name="user_phone"
+                                       id="user_phone">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <label class="col-sm-2 control-label">角色</label>
+                            <div class="col-sm- 4">
+                                <input type="checkbox" id="rolevalue" th:name="rolevalue"
+                                       th:each="r:${session.roleListInfo}" th:value="${r.role_code}"
+                                       th:text="${r.role_name}">
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <!--<select  name="role_code" class="form-control">
+                                    <option selected disabled>请选择用户类型</option>
+                                    <option th:each="r:${session.roleListInfo}" th:value="${r.role_code}" th:text="${r.role_name}"></option>
+                                </select>-->
+                            </div>
+                        </div>
+                        <br>
+
+                        <br>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        <input type="hidden" id="judgelable" value="insert" name="judgelable">
+                        <button type="submit" class="btn btn-primary">提交</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+    </form>
 </div>
 <script src="../assets/vendor/jquery/jquery.min.js"></script>
 <script src="../assets/vendor/bootstrap/js/bootstrap.min.js"></script>

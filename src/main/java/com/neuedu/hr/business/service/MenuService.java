@@ -11,7 +11,20 @@ import java.util.List;
 public class MenuService {
     @Autowired
     private MenuDao menuDao;
+
     public List<Menu> getAllMenu(){
         return menuDao.getAllMenu();
+    }
+
+    public void insertMenu(Menu menu) {
+        menuDao.insertMenu(menu);
+    }
+
+    public void deleteMenu(String menu_code) {
+        menuDao.deleteMenu(menu_code);
+    }
+
+    public void updateMenu(Menu menu) {
+        menuDao.updateMenu(menu);
     }
 }

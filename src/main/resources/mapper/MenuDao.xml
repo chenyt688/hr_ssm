@@ -13,7 +13,7 @@
 </resultMap>
 
     <select id="getAllMenu" resultMap="menuMap">
-        select * from hr_menus;
+        select * from hr_menus where del_flag ='0';
    </select>
 
 </mapper>
